@@ -1,0 +1,16 @@
+---
+description: Frontend standards for Corporate Survivor React app
+globs: frontend/**/*.{ts,tsx,css}
+alwaysApply: false
+---
+
+# Frontend Standards
+
+- Use React + TypeScript components focused on rendering API state.
+- Do not hardcode events, endings, scoring, unlock rules, or attribute effects in the UI.
+- Fetch game state and ranking from the backend API contracts documented in `docs/api.md`.
+- Keep screens under `frontend/src/pages`, reusable UI under `frontend/src/components`, and API calls under `frontend/src/api`.
+- Components should accept explicit props and avoid hidden global state for game progression.
+- The frontend may cache the last player id for convenience, but SQLite-backed API state is the source of truth.
+- Keep the layout responsive for desktop and mobile from the first implementation.
+- When changing flows visible to the player, update `docs/architecture.md` or `docs/game-rules.md` if behavior changes.

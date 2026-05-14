@@ -1,0 +1,13 @@
+---
+description: Corporate Survivor core standards across frontend, backend, and content
+alwaysApply: true
+---
+
+# Corporate Survivor Project Standards
+
+- Keep corporate RPG rules **server-side**. React renders API state only; never hardcode events, endings, scoring, unlock logic, or attribute math in `frontend/`.
+- Keep narrative content **data-driven**. Prefer extending `backend/src/game/events.json` (or `CORPORATE_SURVIVOR_EVENTS_PATH`) instead of branching UI/API code per story beat.
+- Persist authoritative gameplay state in **SQLite** (`backend/data/`). Every choice must insert a `decisions` row and update `games` in one DB transaction.
+- Prefer **TypeScript + Zod** validation on API boundaries (`backend/src/index.ts`). Keep Express handlers thin and delegate to `backend/src/services/`.
+- Prefer **pure, testable engine functions** in `backend/src/game/` (conditions, effects, scoring, endings) with no imports from Express.
+- Update documentation when contracts change: `README.md`, `docs/api.md`, and `docs/game-rules.md`.

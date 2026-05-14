@@ -1,0 +1,16 @@
+---
+description: Backend standards for Corporate Survivor Express and SQLite API
+globs: backend/**/*.{ts,sql,json}
+alwaysApply: false
+---
+
+# Backend Standards
+
+- Use Node.js + Express + TypeScript for the API and SQLite for persistence.
+- Keep route handlers thin: validate payloads, call services or the game engine, and return documented responses.
+- SQLite is the source of truth for players, games, decisions, endings, and ranking.
+- Persist every choice with event id, choice id, effects, flags, and attributes before/after.
+- Apply choice transitions transactionally so the game state and decision history cannot diverge.
+- Use the error shape documented in `docs/api.md` for expected failures.
+- Do not duplicate game rules in route handlers; call the engine for progression, scoring, and endings.
+- When changing endpoints or persistence behavior, update `docs/api.md` and `docs/decisions.md`.

@@ -1,0 +1,16 @@
+---
+description: Game engine standards for configurable Corporate Survivor stories
+globs: backend/src/game/**/*.{ts,json}
+alwaysApply: false
+---
+
+# Game Engine Standards
+
+- The engine owns event selection, condition evaluation, attribute effects, flags, scoring, and endings.
+- Events must be data-driven and loaded from configuration, initially `backend/src/game/events.json`.
+- Adding a normal event should require editing only the story configuration file.
+- Prefer generic condition and effect handlers over custom event-specific code.
+- Keep the required main flow valid: 5 days, exactly 3 main slots per day, and at least 15 main events.
+- Every event needs an `id`, `description`, `options`, consequences, and unlock conditions.
+- The engine should expose pure functions where possible so rules can be tested without Express or SQLite.
+- If a new story or mode needs a new schema capability, document it in `docs/game-rules.md` before relying on it.

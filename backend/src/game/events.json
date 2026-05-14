@@ -1,0 +1,540 @@
+[
+  {
+    "id": "main-d1-s1-acesso-sistemas",
+    "storyId": "main",
+    "day": 1,
+    "slot": 1,
+    "type": "main",
+    "priority": 0,
+    "title": "Credenciais e acesso",
+    "description": "O primeiro dia começa caótico: seu notebook chega sem alguns softwares e o time já pede uma entrega para amanhã. O seu buddy sugere usar uma conta compartilhada temporariamente.",
+    "options": [
+      {
+        "id": "accept-shared-account",
+        "label": "Aceitar o jeitinho para não travar o time.",
+        "effects": { "productivity": 2, "reputation": -1, "anxiety": 1 },
+        "setFlags": ["shortcut-shared-account"]
+      },
+      {
+        "id": "open-ticket-security",
+        "label": "Abrir chamado oficial no TI e comunicar o bloqueio.",
+        "effects": { "reputation": 2, "learning": 2, "productivity": -1 }
+      },
+      {
+        "id": "negotiate-scope",
+        "label": "Pedir um mini-planinho com escopo antes de prometer data.",
+        "effects": { "learning": 2, "networking": 1, "productivity": -1 }
+      },
+      {
+        "id": "silent-agree",
+        "label": "Concordar por mensagem e tentar resolver depois.",
+        "effects": { "energy": -1, "anxiety": 1 }
+      }
+    ]
+  },
+  {
+    "id": "main-d1-s2-duas-demandas",
+    "storyId": "main",
+    "day": 1,
+    "slot": 2,
+    "type": "main",
+    "priority": 0,
+    "title": "Duas demandas ao mesmo tempo",
+    "description": "Duas pessoas diferentes pedem prioridade máxima para entregas diferentes no mesmo dia.",
+    "options": [
+      {
+        "id": "prioritize-manager-task",
+        "label": "Priorizar o pedido da liderança imediata.",
+        "effects": { "reputation": 2, "networking": -1, "anxiety": 1 }
+      },
+      {
+        "id": "prioritize-peer-help",
+        "label": "Ajudar o colega que parece mais urgente.",
+        "effects": { "networking": 2, "reputation": -1 }
+      },
+      {
+        "id": "make-tradeoffs-visible",
+        "label": "Responder em grupo pedindo decisão explícita de prioridade.",
+        "effects": { "learning": 2, "reputation": 1, "anxiety": -1 }
+      },
+      {
+        "id": "promise-both",
+        "label": "Prometer os dois para não desagradar.",
+        "effects": { "energy": -2, "anxiety": 2, "productivity": 1 }
+      }
+    ]
+  },
+  {
+    "id": "main-d1-s3-mensagem-18h",
+    "storyId": "main",
+    "day": 1,
+    "slot": 3,
+    "type": "main",
+    "priority": 0,
+    "title": "Rapidinho antes de sair",
+    "description": "Seu gestor manda mensagem às 18h: \"Rapidinho, consegue subir isso hoje?\"",
+    "options": [
+      {
+        "id": "accept-tonight",
+        "label": "Claro, pode deixar comigo.",
+        "effects": { "productivity": 2, "energy": -2, "anxiety": 1 },
+        "setFlags": ["after-hours-hero"]
+      },
+      {
+        "id": "deliver-morning",
+        "label": "Consigo amanhã cedo com mais segurança.",
+        "effects": { "reputation": 1, "productivity": -1, "anxiety": -1 }
+      },
+      {
+        "id": "ask-scope",
+        "label": "Não entendi completamente o escopo.",
+        "effects": { "learning": 2, "reputation": -1 }
+      },
+      {
+        "id": "ignore-message",
+        "label": "Ignorar a mensagem.",
+        "effects": { "energy": 1, "reputation": -3 }
+      }
+    ]
+  },
+  {
+    "id": "main-d2-s1-daily-pressao",
+    "storyId": "main",
+    "day": 2,
+    "slot": 1,
+    "type": "main",
+    "priority": 0,
+    "title": "Silêncio no daily",
+    "description": "No daily, alguém pergunta rapidamente o seu status. Você ainda está se localizando e o silêncio pesa.",
+    "options": [
+      {
+        "id": "honest-blocking",
+        "label": "Ser direto sobre bloqueios e o que falta.",
+        "effects": { "reputation": 2, "learning": 1, "anxiety": -1 }
+      },
+      {
+        "id": "vague-update",
+        "label": "Dar uma atualização genérica para não travar o tempo.",
+        "effects": { "reputation": -1, "anxiety": 1 }
+      },
+      {
+        "id": "ask-for-help-public",
+        "label": "Pedir ajuda ao buddy ali mesmo.",
+        "effects": { "networking": 2, "learning": 1, "productivity": 1 },
+        "conditions": {
+          "blockedFlags": ["shortcut-shared-account"]
+        }
+      },
+      {
+        "id": "ask-for-help-public-anyway",
+        "label": "Pedir ajuda ao buddy ali mesmo.",
+        "effects": { "networking": 2, "learning": 1, "productivity": 1 },
+        "conditions": {
+          "requiredFlags": ["shortcut-shared-account"]
+        }
+      }
+    ]
+  },
+  {
+    "id": "main-d2-s2-daily-normal",
+    "storyId": "main",
+    "day": 2,
+    "slot": 2,
+    "type": "main",
+    "priority": 0,
+    "title": "Stand-up continua",
+    "description": "Após o daily, surge uma conversa rápida sobre prazos e dependências.",
+    "options": [
+      {
+        "id": "take-notes-share",
+        "label": "Registrar próximos passos e enviar em grupo.",
+        "effects": { "productivity": 2, "reputation": 1 }
+      },
+      {
+        "id": "stay-quiet",
+        "label": "Ouvir só e tentar não aparecer.",
+        "effects": { "networking": -1, "anxiety": -1 }
+      },
+      {
+        "id": "challenge-estimate",
+        "label": "Questionar uma estimativa que parece irreal.",
+        "effects": { "learning": 2, "reputation": -1, "anxiety": 1 }
+      },
+      {
+        "id": "offer-help-small",
+        "label": "Oferecer ajuda pequena para ganhar ritmo.",
+        "effects": { "networking": 2, "energy": -1 }
+      }
+    ]
+  },
+  {
+    "id": "main-d2-s2-pos-extra",
+    "storyId": "main",
+    "day": 2,
+    "slot": 2,
+    "type": "main",
+    "priority": 10,
+    "title": "Resgate do dia anterior",
+    "description": "Colegas lembram que você ficou até tarde ontem e já jogam mais uma pendência para você assumir.",
+    "conditions": {
+      "requiredFlags": ["after-hours-hero"]
+    },
+    "options": [
+      {
+        "id": "accept-extra",
+        "label": "Aceitar para mostrar comprometimento.",
+        "effects": { "productivity": 2, "energy": -2, "anxiety": 2 },
+        "setFlags": ["always-available-risk"]
+      },
+      {
+        "id": "set-boundary",
+        "label": "Combinar um limite claro com entrega ao longo do dia.",
+        "effects": { "reputation": 2, "energy": 1, "anxiety": -1 },
+        "clearFlags": ["always-available-risk"]
+      },
+      {
+        "id": "delegate-peer",
+        "label": "Sugerir divisão com outra pessoa.",
+        "effects": { "networking": 2, "learning": 1 }
+      },
+      {
+        "id": "escalate-manager",
+        "label": "Chamar o gestor para priorizar.",
+        "effects": { "reputation": 1, "learning": 1 }
+      }
+    ]
+  },
+  {
+    "id": "main-d2-s3-code-review",
+    "storyId": "main",
+    "day": 2,
+    "slot": 3,
+    "type": "main",
+    "priority": 0,
+    "title": "Code review cortante",
+    "description": "Seu merge recebe comentários ácidos em público no PR.",
+    "options": [
+      {
+        "id": "reply-professional",
+        "label": "Responder objetivamente pedindo um pareamento rápido.",
+        "effects": { "reputation": 2, "learning": 2 }
+      },
+      {
+        "id": "reply-defensive",
+        "label": "Responder na defensiva.",
+        "effects": { "reputation": -2, "anxiety": 2 }
+      },
+      {
+        "id": "fix-quietly",
+        "label": "Só corrigir e não responder muito.",
+        "effects": { "productivity": 1, "networking": -1 }
+      },
+      {
+        "id": "ask-offline",
+        "label": "Pedir feedback offline.",
+        "effects": { "networking": 1, "anxiety": -1 }
+      }
+    ]
+  },
+  {
+    "id": "main-d3-s1-hr-training",
+    "storyId": "main",
+    "day": 3,
+    "slot": 1,
+    "type": "main",
+    "priority": 0,
+    "title": "Treino de compliance",
+    "description": "RH agenda um treino longo bem no meio da sua sprint pessoal imaginária.",
+    "options": [
+      {
+        "id": "attend-full",
+        "label": "Participar inteiro e anotar dúvidas.",
+        "effects": { "learning": 2, "energy": -1 }
+      },
+      {
+        "id": "multitask",
+        "label": "Deixar rodando enquanto trabalha.",
+        "effects": { "productivity": 1, "reputation": -1 }
+      },
+      {
+        "id": "negotiate-later",
+        "label": "Pedir para assistir depois por causa de deadline.",
+        "effects": { "productivity": 1, "reputation": -1, "anxiety": 1 }
+      },
+      {
+        "id": "share-summary",
+        "label": "Assistir e mandar um resumo útil para o time.",
+        "effects": { "networking": 2, "learning": 1 }
+      }
+    ]
+  },
+  {
+    "id": "main-d3-s2-scope-change",
+    "storyId": "main",
+    "day": 3,
+    "slot": 2,
+    "type": "main",
+    "priority": 0,
+    "title": "Mudança de escopo",
+    "description": "Um stakeholder muda requisitos sem atualizar documentação oficial.",
+    "options": [
+      {
+        "id": "follow-verbal",
+        "label": "Seguir o pedido verbal para não bloquear.",
+        "effects": { "productivity": 2, "learning": -1, "anxiety": 1 },
+        "setFlags": ["shadow-scope-change"]
+      },
+      {
+        "id": "request-written",
+        "label": "Pedir confirmação por escrito antes de codar.",
+        "effects": { "reputation": 2, "learning": 2 }
+      },
+      {
+        "id": "pull-manager",
+        "label": "Escalar para o gestor alinhar prioridade.",
+        "effects": { "reputation": 1, "networking": 1 }
+      },
+      {
+        "id": "prototype-fast",
+        "label": "Fazer um protótipo rápido para negociar.",
+        "effects": { "productivity": 1, "energy": -1, "learning": 1 }
+      }
+    ]
+  },
+  {
+    "id": "main-d3-s3-happy-hour",
+    "storyId": "main",
+    "day": 3,
+    "slot": 3,
+    "type": "main",
+    "priority": 0,
+    "title": "Happy hour opcional",
+    "description": "O time marca um happy hour presencial bem na hora que você quer finalizar algo importante.",
+    "options": [
+      {
+        "id": "go-network",
+        "label": "Ir para fortalecer vínculos.",
+        "effects": { "networking": 3, "energy": -1 }
+      },
+      {
+        "id": "stay-deliver",
+        "label": "Ficar para entregar.",
+        "effects": { "productivity": 2, "networking": -2 }
+      },
+      {
+        "id": "join-short",
+        "label": "Ir só por 30 minutos.",
+        "effects": { "networking": 1, "energy": -1 }
+      },
+      {
+        "id": "skip-politely",
+        "label": "Recusar educado citando deadline.",
+        "effects": { "reputation": -1, "productivity": 1 }
+      }
+    ]
+  },
+  {
+    "id": "main-d4-s1-incident",
+    "storyId": "main",
+    "day": 4,
+    "slot": 1,
+    "type": "main",
+    "priority": 0,
+    "title": "Incidente em produção",
+    "description": "Algo quebra em produção e alguém sugere rapidamente que sua mudança pode estar ligada ao problema.",
+    "options": [
+      {
+        "id": "speak-clear-status",
+        "label": "Declarar claramente o que você tocou e o que não tocou.",
+        "effects": { "reputation": 2, "learning": 2 },
+        "setFlags": ["spoke-up-incident"]
+      },
+      {
+        "id": "stay-quiet-watch",
+        "label": "Esperar para não dar munição contra você.",
+        "effects": { "anxiety": 2, "reputation": -1 },
+        "conditions": {
+          "blockedFlags": ["shadow-scope-change"]
+        }
+      },
+      {
+        "id": "stay-quiet-watch-scope-risk",
+        "label": "Esperar para não dar munição contra você.",
+        "effects": { "anxiety": 3, "reputation": -2 },
+        "conditions": {
+          "requiredFlags": ["shadow-scope-change"]
+        }
+      },
+      {
+        "id": "pair-debug",
+        "label": "Oferecer pareamento para diagnosticar rápido.",
+        "effects": { "networking": 2, "productivity": 2, "energy": -1 }
+      },
+      {
+        "id": "rollback-fast",
+        "label": "Pressionar rollback mesmo sem certeza total.",
+        "effects": { "reputation": -2, "productivity": 1 }
+      }
+    ]
+  },
+  {
+    "id": "main-d4-s2-one-on-one",
+    "storyId": "main",
+    "day": 4,
+    "slot": 2,
+    "type": "main",
+    "priority": 0,
+    "title": "One-on-one",
+    "description": "No 1:1, o gestor pergunta como está a carga e se você está se adaptando.",
+    "options": [
+      {
+        "id": "be-vulnerable-useful",
+        "label": "Ser transparente com limites e pedir suporte objetivo.",
+        "effects": { "anxiety": -2, "reputation": 2 }
+      },
+      {
+        "id": "everything-fine",
+        "label": "Dizer que está tudo ótimo.",
+        "effects": { "energy": -1, "anxiety": 1 }
+      },
+      {
+        "id": "ask-feedback-specific",
+        "label": "Pedir feedback específico sobre comunicação.",
+        "effects": { "learning": 2, "networking": 1 }
+      },
+      {
+        "id": "negotiate-focus-time",
+        "label": "Negociar bloqueios de foco na agenda.",
+        "effects": { "productivity": 2, "reputation": 1 }
+      }
+    ]
+  },
+  {
+    "id": "main-d4-s3-cover-shift",
+    "storyId": "main",
+    "day": 4,
+    "slot": 3,
+    "type": "main",
+    "priority": 0,
+    "title": "Pedido delicado",
+    "description": "Um colega pede para você assumir parte do trabalho dele porque está sobrecarregado.",
+    "options": [
+      {
+        "id": "help-small-slice",
+        "label": "Ajudar com um pedaço pequeno bem definido.",
+        "effects": { "networking": 2, "energy": -1 }
+      },
+      {
+        "id": "say-no-politely",
+        "label": "Recusar citando suas prioridades.",
+        "effects": { "productivity": 1, "networking": -1 }
+      },
+      {
+        "id": "swap-favor",
+        "label": "Trocar favores explicitamente.",
+        "effects": { "networking": 2, "anxiety": -1 }
+      },
+      {
+        "id": "manager-align",
+        "label": "Pedir para alinhar com o gestor antes.",
+        "effects": { "reputation": 2, "learning": 1 }
+      }
+    ]
+  },
+  {
+    "id": "main-d5-s1-demo",
+    "storyId": "main",
+    "day": 5,
+    "slot": 1,
+    "type": "main",
+    "priority": 0,
+    "title": "Mini-demo para o time",
+    "description": "Na sexta, você deve mostrar rapidamente o que aprendeu na semana.",
+    "options": [
+      {
+        "id": "demo-focus-impact",
+        "label": "Mostrar impacto e próximo passo.",
+        "effects": { "productivity": 2, "reputation": 2, "learning": 1 }
+      },
+      {
+        "id": "demo-too-technical",
+        "label": "Entrar em detalhes técnicos profundos.",
+        "effects": { "learning": 2, "reputation": -1 }
+      },
+      {
+        "id": "delegate-slide-to-buddy",
+        "label": "Pedir ajuda do buddy para montar.",
+        "effects": { "networking": 2, "learning": 1 }
+      },
+      {
+        "id": "skip-last-minute",
+        "label": "Tentar escapar dizendo que não está pronto.",
+        "effects": { "reputation": -2, "anxiety": 2 }
+      }
+    ]
+  },
+  {
+    "id": "main-d5-s2-survey",
+    "storyId": "main",
+    "day": 5,
+    "slot": 2,
+    "type": "main",
+    "priority": 0,
+    "title": "Pesquisa anônima",
+    "description": "RH envia pesquisa sobre clima e carga de trabalho. Parece anônima, mas você sente um risco político.",
+    "options": [
+      {
+        "id": "honest-survey",
+        "label": "Responder com honestidade moderada.",
+        "effects": { "anxiety": 1, "reputation": 1 }
+      },
+      {
+        "id": "neutral-survey",
+        "label": "Responder neutro para não se expor.",
+        "effects": { "anxiety": -1, "networking": -1 }
+      },
+      {
+        "id": "skip-survey",
+        "label": "Ignorar a pesquisa.",
+        "effects": { "reputation": -1 }
+      },
+      {
+        "id": "talk-manager-first",
+        "label": "Conversar com o gestor antes de responder.",
+        "effects": { "learning": 2, "networking": 1 }
+      }
+    ]
+  },
+  {
+    "id": "main-d5-s3-weekend-email",
+    "storyId": "main",
+    "day": 5,
+    "slot": 3,
+    "type": "main",
+    "priority": 0,
+    "title": "Email da liderança",
+    "description": "Chega um email incentivando disponibilidade no fim de semana por causa de uma iniciativa importante.",
+    "options": [
+      {
+        "id": "engage-weekend",
+        "label": "Se voluntariar.",
+        "effects": { "productivity": 2, "energy": -2, "anxiety": 2 }
+      },
+      {
+        "id": "offer-monday",
+        "label": "Propor um plano forte para segunda.",
+        "effects": { "reputation": 2, "productivity": 1 }
+      },
+      {
+        "id": "silent-opt-out",
+        "label": "Não responder.",
+        "effects": { "energy": 1, "reputation": -1 }
+      },
+      {
+        "id": "set-boundary-public",
+        "label": "Responder com limite saudável.",
+        "effects": { "reputation": -1, "anxiety": -2, "energy": 1 }
+      }
+    ]
+  }
+]
